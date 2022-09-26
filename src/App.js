@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import AppWrapper from './AppWrapper';
+import { possibleWords } from './allowedWords';
+import dayjs from 'dayjs';
+import dayOfYear from 'dayjs/plugin/dayOfYear';
 
 function App() {
+  // get the word selection based on the day of the year
+  dayjs.extend(dayOfYear);
+  const day = dayjs().dayOfYear();
+  const num = Math.round(day * (possibleWords.length / 86400) * 235);
+  const word = possibleWords[num];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppWrapper word={word} />
     </div>
   );
 }
