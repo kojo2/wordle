@@ -117,3 +117,16 @@
   box-sizing: border-box;
   height: 62px;
 }
+
+.random-button {
+  width: 50px;
+  opacity: 0.2;
+  height: 50px;
+  right: 0;
+  position: absolute;
+}
+
+.random-button:hover {
+  opacity: 1;
+  cursor: pointer !important;
+}
