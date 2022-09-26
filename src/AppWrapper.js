@@ -140,7 +140,7 @@ const AppWrapper = ({ word, setRandomWord }) => {
         </svg>
       </div>
       <Wordbox guesses={guesses} currentRow={currentRow} word={word} lockedInRows={lockedInRows} />
-      <div style={{ color: 'white' }}>{JSON.stringify(word)}</div>
+      {/* <div style={{ color: 'white' }}>{JSON.stringify(word)}</div> */}
       <LetterBox
         word={word}
         guessedLetters={guessedLetters}
